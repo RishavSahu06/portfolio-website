@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title --><title>Rishav Sahu - CS Student Portfolio</title>
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font (Inter) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply the Inter font family */
+        html {
+            font-family: 'Inter', 'sans-serif';
+            scroll-behavior: smooth;
+        }
+
+        /* Styles for the fade-in-on-scroll animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            /* Slower transition for a smoother flow */
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Active navigation link styling */
+        .nav-link.active {
+            color: #E11D48; /* rose-600 */
+            font-weight: 600; /* semibold */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-rose-50 text-gray-900 antialiased">
+
+    <!-- Header & Navigation --><header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-rose-600 transition-transform transform hover:scale-105">
+                Rishav Sahu
+            </a>
+            
+            <!-- Desktop Navigation --><div id="desktop-nav" class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-link text-gray-700 hover:text-rose-600 transition-all font-medium transform hover:-translate-y-0.5">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-rose-600 transition-all font-medium transform hover:-translate-y-0.5">About</a>
+                <a href="#education" class="nav-link text-gray-700 hover:text-rose-600 transition-all font-medium transform hover:-translate-y-0.5">Education</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-rose-600 transition-all font-medium transform hover:-translate-y-0.5">Skills</a>
+                <a href="#projects" class="nav-link text-gray-700 hover:text-rose-600 transition-all font-medium transform hover:-translate-y-0.5">Projects</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-rose-600 transition-all font-medium transform hover:-translate-y-0.5">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button --><button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu (Hidden by default) --><div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#home" class="block px-6 py-3 text-gray-600 hover:bg-rose-50 hover:text-rose-600">Home</a>
+            <a href="#about" class="block px-6 py-3 text-gray-600 hover:bg-rose-50 hover:text-rose-600">About</a>
+            <a href="#education" class="block px-6 py-3 text-gray-600 hover:bg-rose-50 hover:text-rose-600">Education</a>
+            <a href="#skills" class="block px-6 py-3 text-gray-600 hover:bg-rose-50 hover:text-rose-600">Skills</a>
+            <a href="#projects" class="block px-6 py-3 text-gray-600 hover:bg-rose-50 hover:text-rose-600">Projects</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-600 hover:bg-rose-50 hover:text-rose-600">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section --><section id="home" class="container mx-auto px-6 py-20 md:py-32 flex flex-col-reverse md:flex-row items-center min-h-[calc(100vh-68px)]">
+            <!-- Text Content --><div class="md:w-3/5 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                    Hello, I'm 
+                    <span class="text-rose-600">Rishav Sahu</span>
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl font-medium text-gray-700">
+                    1st Year Computer Science Student
+                </p>
+                <p class="mt-2 text-lg text-gray-600">
+                    at the Indian Institute of Information Technology Kalyani.
+                </p>
+
+                <!-- Social Icons --><div class="mt-6 flex justify-center md:justify-start space-x-6">
+                    <a href="https://github.com/RishavSahu06" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-rose-600 transition-all transform hover:scale-110" title="GitHub">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rishav-sahu-976905382" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-rose-600 transition-all transform hover:scale-110" title="LinkedIn">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    </a>
+                    <!-- Email Icon -->
+                    <a href="mailto:rishavsahu673@gmail.com" class="text-gray-600 hover:text-rose-600 transition-all transform hover:scale-110" title="Email me">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+                
+                <a href="#contact" class="mt-10 inline-block bg-rose-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-rose-700 transition-all transform hover:-translate-y-0.5 hover:scale-105">
+                    Get in Touch
+                </a>
+            </div>
+            
+            <!-- Image --><div class="md:w-2/5 flex justify-center mb-10 md:mb-0">
+                <img id="hero-image" src="portfolioimage1.jpeg" 
+                     alt="Profile Picture" 
+                     class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white"
+                     onerror="this.onerror=null;this.src='https://placehold.co/320x320/FBCFE8/E11D48?text=Your+Photo';">
+            </div>
+        </section>
+
+        <!-- About Me Section --><section id="about" class="bg-white py-20 md:py-28 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900">About Me</h2>
+                <div class="w-24 h-1 bg-rose-600 mx-auto mt-4 mb-10"></div>
+                
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center leading-relaxed">
+                    I'm a passionate first-year CS student with a strong interest in coding, technology, and robotics. I'm always eager to learn new concepts and apply them to build exciting projects. I enjoy problem-solving and have experience with C, C++, and Python, along with foundational knowledge of working in Linux server environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section --><section id="education" class="bg-rose-50 py-20 md:py-28 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900">My Journey</h2>
+                <div class="w-24 h-1 bg-rose-600 mx-auto mt-4 mb-10"></div>
+                
+                <div class="mt-12 max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- IIIT Kalyani --><div class="bg-white p-6 rounded-lg shadow-lg text-center transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <p class="text-sm font-medium text-rose-700">2025 - Present</p>
+                        <h3 class="text-xl font-semibold mt-2 text-gray-900">IIIT Kalyani</h3>
+                        <p class="text-gray-800 mt-1">B.Tech, Computer Science</p>
+                    </div>
+                    
+                    <!-- Delhi Public School Ruby Park --><div class="bg-white p-6 rounded-lg shadow-lg text-center transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <p class="text-sm font-medium text-rose-700">2022 - 2024</p>
+                        <h3 class="text-xl font-semibold mt-2 text-gray-900">Delhi Public School Ruby Park</h3>
+                        <p class="text-gray-800 mt-1">Higher secondary education</p>
+                    </div>
+                    
+                    <!-- The Future Foundation School --><div class="bg-white p-6 rounded-lg shadow-lg text-center transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <p class="text-sm font-medium text-rose-700">2011 - 2022</p>
+                        <h3 class="text-xl font-semibold mt-2 text-gray-900">The Future Foundation School</h3>
+                        <p class="text-gray-800 mt-1">Primary and secondary education</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section --><section id="skills" class="bg-white py-20 md:py-28 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900">Technical Skills</h2>
+                <div class="w-24 h-1 bg-rose-600 mx-auto mt-4 mb-10"></div>
+                
+                <div class="mt-12 max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                    <!-- C --><div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                        <h3 class="text-lg font-semibold text-gray-800">C</h3>
+                    </div>
+                    <!-- C++ --><div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                        <h3 class="text-lg font-semibold text-gray-800">C++</h3>
+                    </div>
+                    <!-- Python --><div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                        <h3 class="text-lg font-semibold text-gray-800">Python</h3>
+                    </div>
+                    <!-- Linux Servers --><div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                        <h3 class="text-lg font-semibold text-gray-800">Linux Servers</h3>
+                    </div>
+                    <!-- Robotics --><div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                        <h3 class="text-lg font-semibold text-gray-800">Robotics</h3>
+                    </div>
+                    <!-- Git & GitHub --><div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                        <h3 class="text-lg font-semibold text-gray-800">Git & GitHub</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section --><section id="projects" class="bg-rose-50 py-20 md:py-28 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900">Projects</h2>
+                <div class="w-24 h-1 bg-rose-600 mx-auto mt-4 mb-10"></div>
+                
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center leading-relaxed">
+                    I'm currently working on my first projects as a computer science student. Check back soon to see what I've been building!
+                </p>
+                
+                <!-- 
+                PROJECT PLACEHOLDER: 
+                Once you have projects, uncomment and duplicate this block.
+                --><div class="mt-12 max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <!-- <img src="https://placehold.co/600x400/FBCFE8/E11D48?text=Project+Screenshot" alt="Project 1" class="rounded-md mb-4"> --><h3 class="text-xl font-semibold mt-2 text-gray-800">Project </h3>
+                        <p class="text-gray-700 mt-2">No new projects</p>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="https://github.com/RishavSahu06?tab=projects" target="_blank" rel="noopener noreferrer" class="font-medium text-rose-600 hover:text-rose-800 transition-colors">View Projects on GitHub</a>
+                            <!-- <a href="#" class="font-medium text-rose-600 hover:text-rose-800 transition-colors">Live Demo</a> --></div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-lg transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <!-- <img src="https://placehold.co/600x400/FBCFE8/E11D48?text=Project+Screenshot" alt="Project 2" class="rounded-md mb-4"> --><h3 class="text-xl font-semibold mt-2 text-gray-800">Another Project</h3>
+                        <p class="text-gray-700 mt-2">No new projects</p>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="https://github.com/RishavSahu06?tab=projects" target="_blank" rel="noopener noreferrer" class="font-medium text-rose-600 hover:text-rose-800 transition-colors">View Projects on GitHub</a>
+                            <!-- <a href="#" classa="font-medium text-rose-600 hover:text-rose-800 transition-colors">Live Demo</a> --></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section --><section id="contact" class="bg-gray-900 text-white py-20 md:py-28 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Contact Me</h2>
+                <div class="w-24 h-1 bg-rose-600 mx-auto mt-4 mb-10"></div>
+                
+                <p class="text-lg text-gray-300 max-w-xl mx-auto leading-relaxed">
+                    I'm open to new opportunities and collaborations. Feel free to reach out via email or connect with me on social media.
+                </p>
+                
+                <div class="mt-10 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
+                    
+                    <!-- Email group with copy button -->
+                    <div class="flex items-center space-x-2 relative">
+                        <a href="mailto:rishavsahu673@gmail.com" class="text-lg font-medium text-rose-300 hover:text-white transition-colors" title="Send an email">
+                            rishavsahu673@gmail.com
+                        </a>
+                        <button id="copy-email-btn" class="text-rose-300 hover:text-white transition-all transform hover:scale-110" title="Copy email address">
+                            <!-- Clipboard SVG Icon -->
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </button>
+                        <!-- "Copied!" feedback tooltip -->
+                        <span id="copy-feedback" class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-700 text-white text-xs font-semibold px-2 py-1 rounded-md opacity-0 transition-opacity duration-300 pointer-events-none">
+                            Copied!
+                        </span>
+                    </div>
+                    
+                    <a href="https://www.linkedin.com/in/rishav-sahu-976905382" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-rose-300 hover:text-white transition-colors transform hover:scale-105">
+                        LinkedIn
+                    </a>
+                    
+                    <a href="https://github.com/RishavSahu06" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-rose-300 hover:text-white transition-colors transform hover:scale-105">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer class="bg-gray-800 text-gray-400 py-6 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Rishav Sahu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = mobileMenu.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Copy Email Functionality ---
+        const copyBtn = document.getElementById('copy-email-btn');
+        const feedback = document.getElementById('copy-feedback');
+        const emailToCopy = 'rishavsahu673@gmail.com';
+
+        copyBtn.addEventListener('click', () => {
+            // Create a temporary textarea element to hold the text
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = emailToCopy;
+            
+            // Style it to be hidden
+            tempTextArea.style.position = 'absolute';
+            tempTextArea.style.left = '-9999px';
+            
+            document.body.appendChild(tempTextArea);
+            
+            // Select the text and execute the copy command
+            tempTextArea.select();
+            
+            try {
+                // Use execCommand as a fallback
+                document.execCommand('copy');
+                
+                // Show feedback
+                feedback.classList.remove('opacity-0');
+                
+                // Hide feedback after 2 seconds
+                setTimeout(() => {
+                    feedback.classList.add('opacity-0');
+                }, 2000);
+
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                // You could show an error tooltip here
+            }
+            
+            // Remove the temporary textarea
+            document.body.removeChild(tempTextArea);
+        });
+
+        // --- Intersection Observer for Animations & Nav Highlighting ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+
+        const observerOptions = {
+            root: null, // relative to viewport
+            rootMargin: '0px',
+            threshold: 0.4 // 40% of the section must be visible
+        };
+
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 }); // Animation triggers at 10%
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+
+                    // Add active class to the matching link
+                    const activeLink = document.querySelector(`#desktop-nav .nav-link[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for both observers
+        sections.forEach(section => {
+            animationObserver.observe(section);
+            navObserver.observe(section);
+        });
+
+        // --- Parallax Hero Image ---
+        const heroImage = document.getElementById('hero-image');
+        window.addEventListener('scroll', () => {
+            // Get the scroll position
+            const scrollY = window.scrollY;
+            
+            // Apply a vertical transform based on the scroll position
+            // The 0.2 factor makes it move slower than the scroll (parallax)
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrollY * 0.2}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
+
